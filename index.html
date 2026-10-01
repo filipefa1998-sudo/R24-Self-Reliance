@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Self-Reliance · Riverton 24th Ward</title>
+<meta name="theme-color" content="#0d1626">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#080e19; --navy:#0d1626; --navy2:#142139; --navy3:#1c2c4a;
+  --gold:#c9a24a; --gold2:#e8cc84; --goldDim:rgba(201,162,74,.16);
+  --cream:#f3ead6; --cream2:#e4d8bd; --stone:#8d8775; --stone2:#3b4459; --stone3:#2a3347;
+  --sage:#7fae8a; --rose:#d27c6c; --amber:#e0a84a;
+  --line:rgba(232,204,132,.18);
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--ink)}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--cream);min-height:100vh;
+  background:
+   radial-gradient(1200px 600px at 85% -10%,rgba(201,162,74,.10),transparent 60%),
+   radial-gradient(900px 500px at -10% 30%,rgba(28,44,74,.8),transparent 60%),
+   var(--ink);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--gold2)}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+
+/* tapa band */
+.tapa{height:14px;background-repeat:repeat-x;background-size:28px 14px;opacity:.75;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Cpath d='M0 14 L7 0 L14 14 Z' fill='%23c9a24a' fill-opacity='.55'/%3E%3Cpath d='M14 0 L21 14 L28 0 Z' fill='none' stroke='%23c9a24a' stroke-opacity='.5'/%3E%3Ccircle cx='21' cy='4' r='1.3' fill='%23e8cc84'/%3E%3C/svg%3E")}
+.tapa-bg{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23c9a24a' stroke-opacity='.10' stroke-width='1.1'%3E%3Cpath d='M0 22 L22 0 L44 22 L22 44Z'/%3E%3Cpath d='M11 22 L22 11 L33 22 L22 33Z'/%3E%3C/g%3E%3Ccircle cx='22' cy='22' r='1.6' fill='%23c9a24a' fill-opacity='.18'/%3E%3C/svg%3E")}
+
+/* header */
+header{position:relative;padding:22px 16px 0;max-width:1120px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:12px}
+.mark svg{flex:none}
+.mark .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.mark h1{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:30px;line-height:1;letter-spacing:.01em}
+.lockpill{border:1px solid var(--line);background:rgba(20,33,57,.7);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;cursor:pointer;display:flex;gap:8px;align-items:center}
+.lockpill .dot{width:8px;height:8px;border-radius:50%;background:var(--stone)}
+.lockpill.on .dot{background:var(--sage);box-shadow:0 0 0 4px rgba(127,174,138,.2)}
+nav{position:sticky;top:0;z-index:20;background:rgba(8,14,25,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:16px}
+nav .in{max-width:1120px;margin:0 auto;display:flex;gap:4px;padding:8px 12px;overflow-x:auto;scrollbar-width:none}
+nav .in::-webkit-scrollbar{display:none}
+nav button{background:none;border:0;padding:10px 14px;border-radius:10px;font-weight:700;font-size:13.5px;color:var(--cream2);cursor:pointer;white-space:nowrap}
+nav button.on{background:var(--goldDim);color:var(--gold2)}
+main{max-width:1120px;margin:0 auto;padding:22px 16px 90px}
+
+/* generic */
+.card{background:linear-gradient(180deg,rgba(28,44,74,.55),rgba(20,33,57,.55));border:1px solid var(--line);border-radius:var(--r);padding:20px;position:relative}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.h2{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:700;line-height:1.1}
+.h3{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:700}
+.muted{color:var(--stone)}
+.small{font-size:12.5px}
+.label{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:800}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.sp{flex:1}
+.btn{border:1px solid var(--line);background:rgba(8,14,25,.5);border-radius:10px;padding:9px 14px;font-weight:700;font-size:13px;cursor:pointer;transition:.15s}
+.btn:hover{border-color:var(--gold);color:var(--gold2)}
+.btn.gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1306;border-color:transparent}
+.btn.gold:hover{filter:brightness(1.05);color:#1a1306}
+.btn.sm{padding:6px 10px;font-size:12px;border-radius:8px}
+.btn.ghost{background:none}
+.btn.danger:hover{border-color:var(--rose);color:var(--rose)}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:800;letter-spacing:.02em;border:1px solid var(--line)}
+.chip.gold{background:var(--goldDim);color:var(--gold2);border-color:rgba(201,162,74,.4)}
+.chip.sage{background:rgba(127,174,138,.15);color:#a8d3b2;border-color:rgba(127,174,138,.4)}
+.chip.rose{background:rgba(210,124,108,.14);color:#f0a99b;border-color:rgba(210,124,108,.4)}
+.chip.amber{background:rgba(224,168,74,.14);color:#f2c77c;border-color:rgba(224,168,74,.45)}
+.chip.stone{color:var(--cream2)}
+input,select,textarea{background:rgba(8,14,25,.65);border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:14px;width:100%;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+select option{background:var(--navy)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field>span{font-size:11.5px;font-weight:700;color:var(--cream2)}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+hr.gl{border:0;height:1px;background:var(--line);margin:16px 0}
+body.locked .edit-only{display:none!important}
+body:not(.locked) .view-only{display:none!important}
+
+/* hero */
+.hero{border-radius:22px;overflow:hidden;position:relative;border:1px solid var(--line);
+ background:linear-gradient(135deg,var(--navy3) 0%,var(--navy) 60%,var(--ink) 100%)}
+.hero .in{position:relative;padding:28px 24px 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:end}
+@media(max-width:820px){.hero .in{grid-template-columns:1fr}}
+.hero blockquote{font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.25;font-style:italic;color:var(--cream)}
+.hero blockquote b{color:var(--gold2);font-style:normal;font-weight:700}
+.hero cite{display:block;margin-top:10px;font-style:normal;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.path div{background:rgba(8,14,25,.55);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
+.path b{display:block;font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--gold2)}
+.path span{font-size:10.5px;color:var(--cream2);line-height:1.25;display:block;margin-top:2px}
+
+/* class card */
+.cls{overflow:hidden}
+.cls .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.cls .course{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:700;line-height:1.05;margin:6px 0 2px}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:13.5px;margin-top:14px}
+.meta dt{color:var(--stone);font-weight:700}
+.next{margin-top:16px;border-radius:14px;padding:14px;background:rgba(8,14,25,.55);border:1px solid rgba(201,162,74,.35)}
+.next .t{font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:700;line-height:1.15;margin-top:4px}
+
+/* foundation stones */
+.wallwrap{display:flex;gap:16px;align-items:flex-end;margin-top:14px}
+.wall{display:flex;flex-direction:column-reverse;gap:5px;flex:1;min-width:0}
+.wall .course-row{display:flex;gap:5px}
+.wall .course-row.off{padding-left:7%}
+.stone{flex:1;height:30px;border-radius:7px 9px 6px 8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:rgba(243,234,214,.45);
+ background:linear-gradient(180deg,#3d465b,#2c3446);border:1px solid rgba(255,255,255,.06);box-shadow:inset 0 -3px 0 rgba(0,0,0,.25);max-width:none}
+.stone.done{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#2a1e06;box-shadow:inset 0 -3px 0 rgba(0,0,0,.18),0 0 12px rgba(201,162,74,.25)}
+.stone.next{border:1.5px dashed var(--gold2);color:var(--gold2);background:rgba(201,162,74,.08);animation:pulse 2.4s infinite}
+.stone.cx{background:repeating-linear-gradient(135deg,#2c3446 0 6px,#353e52 6px 12px);color:rgba(243,234,214,.3);text-decoration:line-through}
+.stone.late{border:1.5px solid var(--amber);color:var(--amber)}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,204,132,.0)}50%{box-shadow:0 0 0 5px rgba(232,204,132,.12)}}
+.rock{height:10px;border-radius:0 0 10px 10px;background:linear-gradient(90deg,#4a4436,#6e6450,#4a4436);opacity:.8}
+.pct{text-align:right;flex:none}
+.pct b{font-family:"Cormorant Garamond",serif;font-size:38px;color:var(--gold2);line-height:1}
+
+/* class page */
+.subtabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 14px}
+.subtabs button{border:1px solid var(--line);background:none;border-radius:999px;padding:8px 14px;font-weight:700;font-size:13px;cursor:pointer;color:var(--cream2)}
+.subtabs button.on{background:var(--gold);color:#1a1306;border-color:var(--gold)}
+.week{border:1px solid var(--line);border-radius:14px;background:rgba(20,33,57,.5);margin-bottom:10px;overflow:hidden}
+.week.isnext{border-color:rgba(232,204,132,.6);box-shadow:0 0 0 3px rgba(201,162,74,.08)}
+.week .wh{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;padding:12px 14px;cursor:pointer}
+.wnum{width:54px;height:54px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(8,14,25,.6);border:1px solid var(--line)}
+.wnum small{font-size:9px;letter-spacing:.16em;color:var(--stone);font-weight:800}
+.wnum b{font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1;color:var(--gold2)}
+.week .tt{font-weight:800;font-size:15px;line-height:1.25}
+.week .sub{font-size:12.5px;color:var(--cream2);margin-top:3px}
+.week .body{padding:4px 14px 16px;border-top:1px solid var(--line)}
+.flow{display:flex;border-radius:10px;overflow:hidden;margin:12px 0;border:1px solid var(--line)}
+.flow div{padding:8px 6px;text-align:center;font-size:11px;font-weight:800;border-right:1px solid var(--line);min-width:0}
+.flow div:last-child{border-right:0}
+.flow div:nth-child(odd){background:rgba(201,162,74,.10)}
+.flow div span{display:block;font-size:10px;color:var(--stone);font-weight:700}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:8px 12px;font-size:13.5px;margin-top:6px}
+@media(max-width:560px){.kv{grid-template-columns:1fr}.week .wh{grid-template-columns:54px 1fr}.week .wh .st{grid-column:2}}
+.kv dt{color:var(--stone);font-weight:700}
+
+/* attendance */
+.scrollx{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table.att{border-collapse:separate;border-spacing:0;width:max-content;min-width:100%;font-size:13px}
+.att th,.att td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+.att th{font-size:11px;color:var(--stone);font-weight:800;background:rgba(8,14,25,.6)}
+.att td.nm,.att th.nm{text-align:left;position:sticky;left:0;background:var(--navy2);padding-left:12px;min-width:170px;z-index:1}
+.cell{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(8,14,25,.4);cursor:pointer;font-weight:800}
+.cell.y{background:var(--gold);color:#1a1306;border-color:var(--gold)}
+.cell.na{opacity:.25;cursor:default}
+.elig{font-size:11px;font-weight:800}
+
+/* people */
+.plist{display:flex;flex-direction:column;gap:8px}
+.person{display:grid;grid-template-columns:38px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(8,14,25,.35)}
+.av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;background:var(--goldDim);color:var(--gold2);border:1px solid rgba(201,162,74,.35)}
+.person .ctl{display:flex;gap:6px;align-items:center}
+.person select{width:auto;padding:6px 8px;font-size:12.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(8,14,25,.4)}
+.stat b{display:block;font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--gold2);line-height:1}
+.stat span{font-size:11.5px;color:var(--cream2);font-weight:700}
+
+/* lessons library */
+.coursepick{display:flex;gap:8px;flex-wrap:wrap}
+.coursepick button{border:1px solid var(--line);background:rgba(8,14,25,.45);border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:700;font-size:13px;text-align:left}
+.coursepick button.on{border-color:var(--gold);background:var(--goldDim);color:var(--gold2)}
+.chlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-top:14px}
+.ch{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:rgba(8,14,25,.35)}
+.ch .n{font-size:10.5px;letter-spacing:.16em;color:var(--gold);font-weight:800}
+.ch .t{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;line-height:1.15;margin:3px 0 6px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.dos{grid-template-columns:1fr}}
+.dos ul{list-style:none;display:flex;flex-direction:column;gap:6px;font-size:13.5px}
+.dos li::before{content:"◆";color:var(--gold);font-size:9px;margin-right:8px;vertical-align:2px}
+.dos .no li::before{content:"✕";color:var(--rose)}
+
+/* modal + toast */
+#modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;background:rgba(4,8,15,.7);padding:16px}
+#modal.on{display:flex}
+#modal .box{width:min(460px,100%);background:var(--navy2);border:1px solid var(--line);border-radius:18px;padding:22px}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(30px);opacity:0;transition:.25s;z-index:70;background:var(--gold);color:#1a1306;font-weight:800;padding:11px 18px;border-radius:999px;font-size:13.5px;pointer-events:none;max-width:90vw;text-align:center}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.sync{font-size:11.5px;font-weight:700;color:var(--stone);display:flex;align-items:center;gap:6px}
+.sync i{width:7px;height:7px;border-radius:50%;background:var(--stone);display:inline-block}
+.sync.live i{background:var(--sage)}
+footer{text-align:center;color:var(--stone);font-size:12px;padding:24px 16px 40px}
+pre.code{background:rgba(8,14,25,.7);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:12px;overflow:auto;white-space:pre-wrap;color:var(--cream2)}
+.empty{border:1px dashed var(--line);border-radius:14px;padding:22px;text-align:center;color:var(--cream2)}
+</style>
+</head>
+<body class="locked">
+<header>
+  <div class="brand">
+    <div class="mark">
+      <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+        <rect x="1" y="1" width="44" height="44" rx="12" fill="#142139" stroke="#c9a24a" stroke-opacity=".5"/>
+        <rect x="8" y="30" width="14" height="7" rx="2" fill="#c9a24a"/><rect x="24" y="30" width="14" height="7" rx="2" fill="#c9a24a"/>
+        <rect x="15" y="22" width="16" height="7" rx="2" fill="#e8cc84"/>
+        <path d="M23 7 L33 18 H13 Z" fill="none" stroke="#e8cc84" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="eyebrow">Riverton 24th Ward</div>
+        <h1>Self-Reliance</h1>
+      </div>
+    </div>
+    <div class="row">
+      <span class="sync" id="sync"><i></i><span>Saved on this device</span></span>
+      <button class="lockpill" id="lockpill" onclick="toggleLock()"><span class="dot"></span><span id="locktxt">View only</span></button>
+    </div>
+  </div>
+</header>
+<div class="tapa" style="max-width:1120px;margin:14px auto 0"></div>
+<nav><div class="in" id="tabs"></div></nav>
+<main id="app"></main>
+<footer><div class="tapa" style="max-width:300px;margin:0 auto 12px;opacity:.4"></div>
+Built on the Rock · Riverton 24th Ward Self-Reliance · Course materials © Intellectual Reserve, Inc. — see <a href="https://www.churchofjesuschrist.org/life/self-reliance?lang=eng" target="_blank" rel="noopener">churchofjesuschrist.org</a></footer>
+<div id="modal"><div class="box" id="mbox"></div></div>
+<div id="toast"></div>
+
+<script>
+/* =====================================================================
+   SYNC SETUP (optional) — paste the Firebase web config for a project
+   to share one live tracker across every phone. Leave null to keep data
+   on each device only.  Example:
+   const FIREBASE_CONFIG = { apiKey:"...", authDomain:"...", projectId:"...", appId:"..." };
+   ===================================================================== */
+const FIREBASE_CONFIG = null;
+const FIRESTORE_COLLECTION = "selfReliance";
+const FIRESTORE_DOC = "riverton24";
+
+/* ===================== COURSE LIBRARY (from Church manuals) ===================== */
+const F12=[["Report",25],["My Foundation",20],["Learn",45],["Ponder",5],["Commit",10]];
+const BASE="https://www.churchofjesuschrist.org/life/";
+const COURSES={
+ pf:{name:"Personal Finances",short:"Finances",complete:10,flow:F12,url:BASE+"self-reliance/personal-finances?lang=eng",
+  fit:"Made for couples — every week includes a family council between spouses, and the Financial Stewardship Success Map rests on “unity with spouse.”",
+  ch:[["Becoming a Wise and Faithful Steward","Self-Reliance Is a Principle of Salvation","Track income & expenses daily; counsel with the Lord about finances"],
+   ["Becoming Unified in Our Approach to Finances","Exercise Faith in Jesus Christ","Keep tracking; hold a family council on income & expenses"],
+   ["Paying Tithes and Offerings","Repent and Be Obedient","Keep tracking; counsel together about tithes & offerings"],
+   ["Creating a Budget","Live a Balanced Life","Build a budget and review it in family council"],
+   ["Sticking to a Budget","Solve Problems","Choose a budgeting system (envelope or digital)"],
+   ["Protecting Your Family from Hardship","Use Time Wisely","Start the one-month emergency fund; review insurance"],
+   ["Understanding Debt","Show Integrity","Complete a debt inventory together"],
+   ["Getting Out of Debt","Work: Take Responsibility and Persevere","Write a debt-elimination plan (rollover method)"],
+   ["Managing Financial Crises","Communicate: Petition and Listen","Budget checkpoint; plan for a financial crisis"],
+   ["Investing for the Future (Part 1)","Seek Learning: Resolve Where You Are Going","Discuss saving, home ownership, and education"],
+   ["Investing for the Future (Part 2)","Become One, Serve Together","Set a retirement goal in family council"],
+   ["Continuing to Give and to Bless Others","Receive Temple Ordinances","Set a temple date; share the course with someone"]]},
+ ls:{name:"Life Skills",short:"Life Skills",complete:10,flow:F12,url:BASE+"self-reliance/life-skills-course?lang=eng",
+  fit:"Designed for older youth and young single adults — education, job-search, and personal-finance basics in one 12-week course. Can also run as three 4-week modules.",
+  ch:[["Prepare for Success","Self-Reliance Is a Principle of Salvation","Explore job options in my area and the education they need"],
+   ["Create an Environment for Success","Exercise Faith in Jesus Christ","Learn the education needed for 3 jobs; practice prioritizing"],
+   ["Understand the Expectations","Manage Money","Find out what my education will cost"],
+   ["Strengthen Study Skills","Use Time Wisely","Research ways to pay for my education"],
+   ["Networking","Become One, Serve Together","Make 3 contacts every day; share my “Me in 30 Seconds”"],
+   ["Power Statements","Work: Take Responsibility and Persevere","Write and practice power statements"],
+   ["Nail the Interview (Part 1)","Repent and Be Obedient","Practice an interview with someone"],
+   ["Nail the Interview (Part 2)","Communicate: Petition and Listen","Practice another interview; keep making contacts"],
+   ["Become a Wise and Faithful Steward","Solve Problems","Track income & expenses; counsel with family about finances"],
+   ["Create a Budget","Seek Learning: Resolve Where You Are Going","Build a mission-or-college budget; finish my “life’s mission”"],
+   ["Sticking to a Budget","Show Integrity","Choose a budgeting system; discuss it in family council"],
+   ["Avoiding Unnecessary Debt","Receive Temple Ordinances","Research ways to pay for school without debt; set a temple date"]]},
+ er:{name:"Emotional Resilience",short:"Resilience",complete:8,flow:[["Report",15],["My Foundation",20],["Learn",60],["Ponder",5],["Commit",5]],url:BASE+"self-reliance/emotional-resilience?lang=eng",
+  fit:"“Finding Strength in the Lord.” Best with 8–10 people. If youth attend: 16 or older, with two adults present.",
+  ch:[["Building Emotional Strength in the Lord","Exercise Faith in Jesus Christ","One act of faith; write one gratitude each day"],
+   ["Healthy Thinking Patterns","Our Divine Identity and Purpose","Remember my divine identity; fill out a Thinking Management Chart"],
+   ["Our Bodies and Emotions","Our Bodies Are a Gift from God","Treat my body like a temple; plan exercise & rest"],
+   ["Managing Stress and Anxiety","Use Time Wisely","Practice the 5 time steps; try a relaxation exercise"],
+   ["Understanding Sadness and Depression","Live a Balanced Life","Act on my idea for more balance"],
+   ["Overcoming Anger","Solve Problems","Use the problem-solving steps; complete the Anger Awareness exercise"],
+   ["Managing Addictive Behaviors","Show Integrity","Be more honest in one area I rated"],
+   ["Building Healthy Relationships","Communicate","Pray morning and night and listen; practice “I” messages"],
+   ["Providing Strength to Others","Become One, Serve Together","Act on the group’s service plan"],
+   ["Moving Forward with Faith","Receive Temple Ordinances","Set a temple date; keep a gratitude habit"]]},
+ fbj:{name:"Find a Better Job",short:"Better Job",complete:10,flow:F12,url:BASE+"self-reliance/find-a-better-job?lang=eng",
+  fit:"For anyone seeking work or a better job. Weeks 11–12 are “Sharpen Your Skills.”",
+  ch:[["The Fundamentals","Self-Reliance Is a Principle of Salvation","Identify resources and make contacts every day"],
+   ["Networking","Exercise Faith in Jesus Christ","Practice “Me in 30 Seconds” five times"],
+   ["Match Your Skills to the Employer’s Needs","Manage Money","Match my skills on five job descriptions"],
+   ["Power Statements","Repent and Be Obedient","Write 10 power statements"],
+   ["Written Materials","Use Time Wisely","Write a résumé and get feedback from 3 people"],
+   ["Nail the Interview: Part 1","Work: Take Responsibility and Persevere","Answer 5 interview questions with power statements"],
+   ["Nail the Interview: Part 2","Solve Problems","Turn negatives into positives; prepare questions to ask"],
+   ["Practice Interviews","Become One, Serve Together","Do a full practice interview"],
+   ["Accelerate Your Job Search","Communicate: Petition and Listen","Work toward 15-10-2 each day"],
+   ["Succeed at Work","Show Integrity","Write employment goals and next steps"],
+   ["Sharpen Your Skills","Seek Learning: Resolve Where You Are Going","Practice the skill where I’m struggling most"],
+   ["Sharpen Your Skills","Receive Temple Ordinances","Keep resources & contacts going; share with someone"]]},
+ ebw:{name:"Education for Better Work",short:"Education",complete:10,flow:F12,url:BASE+"self-reliance/education-for-better-work?lang=eng",
+  fit:"For choosing a job, a training program, and a way to pay for it — ends with a written self-reliance plan.",
+  ch:[["The Glory of God Is Intelligence","Self-Reliance Is a Principle of Salvation","Begin my self-reliance plan; track expenses"],
+   ["Prepare for Success","Manage Money","Explore job options in my area"],
+   ["Understand the Job Market","Exercise Faith in Jesus Christ","Confirm my job choice"],
+   ["Evaluate Your Training Options","Seek Learning: Resolve Where You Are Going","Explore training options"],
+   ["Choose a Program of Study","Repent and Be Obedient","Confirm my education or training choice"],
+   ["Pay for Your Education","Work: Take Responsibility and Persevere","Create my finance plan for my education"],
+   ["Present Your Plan","Become One, Serve Together","Share my self-reliance plan with family"],
+   ["Create an Environment for Success","Use Time Wisely","Prioritize; overcome procrastination"],
+   ["Understand the Expectations","Communicate: Petition and Listen","Understand requirements; manage stress"],
+   ["Strengthen Study Skills","Solve Problems","Strengthen study habits; prepare for tests"],
+   ["Stay on Course","Show Integrity","Work with a mentor; learn from failure"],
+   ["Prepare for Work","Receive Temple Ordinances","Network early; keep a record of accomplishments"]]},
+ sgb:{name:"Starting & Growing My Business",short:"Business",complete:10,flow:[["Report",25],["My Foundation",20],["Learn",60],["Ponder",5],["Commit",10]],url:BASE+"starting-and-growing-my-business?lang=eng",
+  fit:"For new or current business owners. Week 12 is a business presentation (plan ~2.5 hours).",
+  ch:[["My Readiness for Business Success","Self-Reliance Is a Principle of Salvation","Paper Clip Challenge; start a business notebook"],
+   ["Solving Unmet Customer Needs","Exercise Faith in Jesus Christ","List five unmet customer needs"],
+   ["Ensuring That I Have a Profitable Business","Manage Money","Talk with five potential customers"],
+   ["Finding Customers","Repent and Be Obedient","Make-A-Sale Challenge"],
+   ["Keeping Customers","Use Time Wisely","Try new ways to engage and listen to customers"],
+   ["Managing the Profitability of My Business","Work: Take Responsibility and Persevere","Keep a revenue & expense log; build an income statement"],
+   ["Keeping Separate My Business and Personal Money","Solve Problems","Pay myself a wage; separate accounts"],
+   ["Managing the Cash Flow of My Business","Become One, Serve Together","List cash-flow challenges and a plan"],
+   ["Growing My Business","Seek Learning: Resolve Where You Are Going","Write a growth plan and a cost-cutting plan"],
+   ["Financing My Business","Show Integrity","Explore financing options"],
+   ["Continually Improving My Business","Communicate: Petition and Listen","Research legal requirements; prepare presentation"],
+   ["Presenting My Business","Receive Temple Ordinances","Refine my Personal Business Planner from feedback"]]}
+};
+const COUPLE_STATUS=["Invited","Accepted","Attending","Completed","Declined"];
+const YOUTH_GROUP=["Youth (12–15)","Youth (16–17)","Young Single Adult","Parent / Adult","Family"];
+
+/* ===================== STATE ===================== */
+const LS_KEY="sr24_state_v1", UNLOCK_KEY="sr24_unlocked";
+function uid(){return Math.random().toString(36).slice(2,9)}
+function blankClass(key,name,tag,course,audience){return {key,name,tag,audience,course,start:"",time:"",end:"",location:"",notes:"",facilitators:[],participants:[],weeks:[]}}
+function defaultState(){
+  return {v:1,updated:0,pinHash:"",
+   classes:{
+    couples:blankClass("couples","Couples Class","Assigned by the Bishopric","pf","Couples invited by the bishopric"),
+    youth:blankClass("youth","Youth & Family Class","Open to everyone","ls","Youth, young single adults, parents & families")
+   }};
+}
+let S=load();
+let ui={view:"home",sub:{couples:"schedule",youth:"schedule"},open:{},lib:"pf"};
+Object.values(S.classes).forEach(ensureWeeks);
+
+function load(){try{const s=JSON.parse(localStorage.getItem(LS_KEY));if(s&&s.classes)return s}catch(e){}return defaultState()}
+let saveTimer=null;
+function save(){
+  S.updated=Date.now();
+  try{localStorage.setItem(LS_KEY,JSON.stringify(S))}catch(e){}
+  if(fsRef){clearTimeout(saveTimer);saveTimer=setTimeout(()=>{fsRef.set(JSON.parse(JSON.stringify(S))).catch(()=>setSync("Sync error — saved locally",false))},500)}
+}
+
+/* ===================== DATES ===================== */
+const pad=n=>String(n).padStart(2,"0");
+function ymd(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
+function pd(s){if(!s)return null;const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
+function addDays(s,n){const d=pd(s);d.setDate(d.getDate()+n);return ymd(d)}
+const TODAY=ymd(new Date());
+function fdate(s,long){const d=pd(s);if(!d)return "Date TBD";return d.toLocaleDateString("en-US",long?{weekday:"long",month:"long",day:"numeric"}:{weekday:"short",month:"short",day:"numeric"})}
+function ftime(t){if(!t)return "";let [h,m]=t.split(":").map(Number);const ap=h>=12?"PM":"AM";h=h%12||12;return h+":"+pad(m)+" "+ap}
+function timeRange(c){if(!c.time)return "Time TBD";return ftime(c.time)+(c.end?" – "+ftime(c.end):"")}
+function daysUntil(s){return Math.round((pd(s)-pd(TODAY))/864e5)}
+
+/* ===================== HELPERS ===================== */
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const C=k=>S.classes[k];
+const CR=k=>COURSES[C(k).course];
+function initials(n){return (n||"?").split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase()}
+function ensureWeeks(c){
+  const n=COURSES[c.course].ch.length;
+  if(!Array.isArray(c.weeks))c.weeks=[];
+  while(c.weeks.length<n){const i=c.weeks.length;c.weeks.push({date:c.start?addDays(c.start,7*i):"",status:"scheduled",fac:"",notes:"",att:{},twoAdults:false})}
+  if(c.weeks.length>n)c.weeks.length=n;
+}
+function weekState(c,i){
+  const w=c.weeks[i];
+  if(w.status==="held")return "held";
+  if(w.status==="cancelled")return "cancelled";
+  if(w.date&&w.date<TODAY)return "late";
+  return "upcoming";
+}
+function nextIdx(c){for(let i=0;i<c.weeks.length;i++){const st=weekState(c,i);if(st==="upcoming"&&c.weeks[i].date)return i}return -1}
+function heldCount(c){return c.weeks.filter(w=>w.status==="held").length}
+function activeParts(c){return c.participants.filter(p=>p.status!=="Declined")}
+function attCount(c,pid){return c.weeks.filter(w=>w.status==="held"&&w.att&&w.att[pid]).length}
+function facName(c,id){const f=c.facilitators.find(x=>x.id===id);return f?f.name:""}
+function leadFacs(c){return c.facilitators.map(f=>f.name).join(" & ")||"Facilitators TBD"}
+
+/* ===================== LOCK ===================== */
+function hash(s){let h=5381;for(const ch of s)h=((h<<5)+h+ch.charCodeAt(0))|0;return "h"+(h>>>0).toString(36)}
+function canEdit(){return !S.pinHash||sessionStorage.getItem(UNLOCK_KEY)===S.pinHash}
+function guard(){if(canEdit())return true;toast("Facilitator sign-in needed to edit");openUnlock();return false}
+function applyLock(){
+  const e=canEdit();document.body.classList.toggle("locked",!e);
+  document.getElementById("lockpill").classList.toggle("on",e);
+  document.getElementById("locktxt").textContent=e?(S.pinHash?"Editing — tap to lock":"Editing (no PIN set)"):"View only — sign in";
+}
+function toggleLock(){
+  if(canEdit()&&S.pinHash){sessionStorage.removeItem(UNLOCK_KEY);applyLock();render();toast("Locked — view only")}
+  else if(!S.pinHash){ui.view="settings";render();toast("Set a facilitator PIN in Settings")}
+  else openUnlock();
+}
+function openUnlock(){
+  modal(`<div class="label">Facilitator sign-in</div><div class="h3" style="margin:6px 0 12px">Enter the class PIN</div>
+  <input id="pinIn" type="password" inputmode="numeric" placeholder="PIN" onkeydown="if(event.key==='Enter')doUnlock()">
+  <div class="row" style="margin-top:14px"><span class="sp"></span><button class="btn" onclick="closeModal()">Cancel</button><button class="btn gold" onclick="doUnlock()">Unlock</button></div>`);
+  setTimeout(()=>document.getElementById("pinIn")?.focus(),50);
+}
+function doUnlock(){const v=document.getElementById("pinIn").value.trim();
+  if(hash(v)===S.pinHash){sessionStorage.setItem(UNLOCK_KEY,S.pinHash);closeModal();applyLock();render();toast("Editing unlocked")}
+  else toast("That PIN didn’t match")}
+
+/* ===================== UI PRIMITIVES ===================== */
+function toast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),2200)}
+function modal(h){document.getElementById("mbox").innerHTML=h;document.getElementById("modal").classList.add("on")}
+function closeModal(){document.getElementById("modal").classList.remove("on")}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+function copy(text,msg){
+  const done=()=>toast(msg||"Copied");
+  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(text).then(done,()=>fallback());else fallback();
+  function fallback(){const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done()}catch(e){modal(`<div class="h3">Copy this</div><textarea style="height:200px;margin-top:10px">${esc(text)}</textarea><div class="row" style="margin-top:12px"><span class="sp"></span><button class="btn" onclick="closeModal()">Close</button></div>`)}ta.remove()}
+}
+
+/* ===================== STONES ===================== */
+function stones(c){
+  const n=c.weeks.length, nx=nextIdx(c);
+  let rows=[];for(let i=0;i<n;i+=4)rows.push([...Array(Math.min(4,n-i)).keys()].map(k=>i+k));
+  return `<div class="wall">${rows.map((r,ri)=>`<div class="course-row ${ri%2?"off":""}">${r.map(i=>{
+    const st=weekState(c,i);const cls=st==="held"?"done":st==="cancelled"?"cx":st==="late"?"late":(i===nx?"next":"");
+    return `<div class="stone ${cls}" title="Week ${i+1}: ${esc(COURSES[c.course].ch[i][0])}">${i+1}</div>`}).join("")}</div>`).join("")}</div>`;
+}
+function wallBlock(c){
+  const h=heldCount(c),n=c.weeks.length;
+  return `<div class="wallwrap"><div style="flex:1;min-width:0">${stones(c)}<div class="rock" style="margin-top:5px"></div></div>
+  <div class="pct"><b>${h}<span style="font-size:20px;color:var(--stone)">/${n}</span></b><div class="small muted">stones laid</div></div></div>`;
+}
+
+/* ===================== RENDER ===================== */
+const TABS=[["home","Home"],["couples","Couples Class"],["youth","Youth & Family"],["lessons","Lesson Library"],["settings","Settings"]];
+function render(){
+  document.getElementById("tabs").innerHTML=TABS.map(([k,l])=>`<button class="${ui.view===k?"on":""}" onclick="go('${k}')">${l}</button>`).join("");
+  const app=document.getElementById("app");
+  app.innerHTML= ui.view==="home"?viewHome(): (ui.view==="couples"||ui.view==="youth")?viewClass(ui.view): ui.view==="lessons"?viewLessons():viewSettings();
+  applyLock();
+}
+function go(v){ui.view=v;render();window.scrollTo({top:0,behavior:"smooth"})}
+
+/* ---------- HOME ---------- */
+function viewHome(){
+  return `
+  <section class="hero tapa-bg"><div class="in">
+    <div>
+      <div class="label" style="margin-bottom:10px">Built on the Rock</div>
+      <blockquote>“Remember that it is upon the <b>rock of our Redeemer</b>, who is Christ, the Son of God, that ye must build your foundation.”<cite>Helaman 5:12</cite></blockquote>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:8px">The self-reliance pattern</div>
+      <div class="path">
+        <div><b>Evaluate</b><span>See where I am</span></div>
+        <div><b>Learn</b><span>A gospel principle & skill</span></div>
+        <div><b>Practice</b><span>Keep weekly commitments</span></div>
+        <div><b>Serve</b><span>Lift someone else</span></div>
+      </div>
+    </div>
+  </div></section>
+  <div class="grid2" style="margin-top:18px">${["couples","youth"].map(classCard).join("")}</div>
+  <div class="card" style="margin-top:18px">
+    <div class="row"><div><div class="label">Ward council</div><div class="h3" style="margin-top:4px">One-tap snapshot</div>
+    <div class="small muted" style="margin-top:2px">Copies both classes’ progress, attendance, and next lesson — ready to paste into the ward council or bishopric thread.</div></div>
+    <span class="sp"></span><button class="btn gold" onclick="copySnapshot()">Copy snapshot</button></div>
+  </div>`;
+}
+function classCard(k){
+  const c=C(k),co=CR(k),nx=nextIdx(c),w=nx>=0?c.weeks[nx]:null;
+  const last=[...c.weeks].map((x,i)=>[x,i]).filter(([x])=>x.status==="held").pop();
+  const ap=activeParts(c).length;
+  const lastLine=last?`Last met wk ${last[1]+1}: ${Object.values(last[0].att||{}).filter(Boolean).length} of ${ap} attended`:"No meetings recorded yet";
+  const late=c.weeks.filter((_,i)=>weekState(c,i)==="late").length;
+  const du=w?daysUntil(w.date):null;
+  return `<article class="card cls">
+   <div class="top"><div><div class="label">${esc(c.name)}</div><div class="course">${esc(co.name)}</div>
+   <div class="small muted">${esc(c.audience)}</div></div>
+   <span class="chip ${k==="couples"?"gold":"sage"}">${esc(c.tag)}</span></div>
+   <dl class="meta">
+    <dt>When</dt><dd>${c.start?pd(c.start).toLocaleDateString("en-US",{weekday:"long"})+"s":"Day TBD"} · ${timeRange(c)}</dd>
+    <dt>Where</dt><dd>${esc(c.location||"Location TBD")}</dd>
+    <dt>Facilitators</dt><dd>${esc(leadFacs(c))}</dd>
+    <dt>Roster</dt><dd>${ap} ${k==="couples"?"couples":"people"} · ${lastLine}</dd>
+   </dl>
+   ${w?`<div class="next"><div class="row"><span class="label">${du===0?"Today":du===1?"Tomorrow":"Next class"} · ${fdate(w.date)}</span><span class="sp"></span><span class="chip stone">Week ${nx+1}</span></div>
+     <div class="t">${esc(co.ch[nx][0])}</div>
+     <div class="small" style="margin-top:4px;color:var(--cream2)">My Foundation: ${esc(co.ch[nx][1])}${w.fac?` · Leading: ${esc(facName(c,w.fac))}`:""}</div></div>`
+   : c.start?`<div class="next"><div class="label">Course status</div><div class="t">${heldCount(c)===c.weeks.length?"Course complete — celebrate!":"All dates are in the past"}</div></div>`
+   :`<div class="next"><div class="label">Getting started</div><div class="t">Set a start date to build the 12-week schedule</div><button class="btn sm edit-only" style="margin-top:8px" onclick="ui.sub['${k}']='setup';go('${k}')">Open setup</button></div>`}
+   ${late?`<div class="chip amber" style="margin-top:10px">${late} past week${late>1?"s":""} need marking held or cancelled</div>`:""}
+   ${wallBlock(c)}
+   <div class="row" style="margin-top:16px"><button class="btn gold" onclick="go('${k}')">Open class</button>${w?`<button class="btn" onclick="copyAnnounce('${k}')">Copy announcement</button>`:""}</div>
+  </article>`;
+}
+
+/* ---------- CLASS ---------- */
+function viewClass(k){
+  const c=C(k),co=CR(k),sub=ui.sub[k];
+  const subs=[["schedule","Schedule & Lessons"],["attendance","Attendance"],["people","People"],["setup","Setup"]];
+  return `<div class="card tapa-bg">
+    <div class="row" style="align-items:flex-start"><div><div class="label">${esc(c.name)} · ${esc(c.tag)}</div>
+    <div class="h2" style="margin-top:6px">${esc(co.name)}</div>
+    <div class="small" style="color:var(--cream2);margin-top:4px">${c.start?pd(c.start).toLocaleDateString("en-US",{weekday:"long"})+"s":"Day TBD"} · ${timeRange(c)} · ${esc(c.location||"Location TBD")}</div>
+    <div class="small muted" style="margin-top:2px">Facilitators: ${esc(leadFacs(c))}</div></div>
+    <span class="sp"></span><a class="btn sm" href="${co.url}" target="_blank" rel="noopener">Church course page ↗</a></div>
+    ${wallBlock(c)}
+  </div>
+  <div class="subtabs">${subs.map(([s,l])=>`<button class="${sub===s?"on":""} ${s==="setup"?"edit-only":""}" onclick="ui.sub['${k}']='${s}';render()">${l}</button>`).join("")}</div>
+  ${sub==="schedule"?tabSchedule(k):sub==="attendance"?tabAttendance(k):sub==="people"?tabPeople(k):canEdit()?tabSetup(k):tabSchedule(k)}`;
+}
+
+function stChip(st,isNext){
+  if(st==="held")return `<span class="chip sage">Held ✓</span>`;
+  if(st==="cancelled")return `<span class="chip rose">Cancelled</span>`;
+  if(st==="late")return `<span class="chip amber">Needs update</span>`;
+  return isNext?`<span class="chip gold">Next</span>`:`<span class="chip stone">Upcoming</span>`;
+}
+function tabSchedule(k){
+  const c=C(k),co=CR(k),nx=nextIdx(c);
+  if(!c.start&&!c.weeks.some(w=>w.date))return `<div class="empty">No dates yet. ${canEdit()?`<button class="btn sm gold" onclick="ui.sub['${k}']='setup';render()">Set the start date</button>`:"A facilitator will post the schedule soon."}</div>`+lessonOnlyList(k);
+  return c.weeks.map((w,i)=>{
+    const st=weekState(c,i),open=ui.open[k+i]??(i===nx);const ch=co.ch[i];
+    const present=Object.values(w.att||{}).filter(Boolean).length;
+    return `<div class="week ${i===nx?"isnext":""}">
+     <div class="wh" onclick="ui.open['${k}${i}']=!${open};render()">
+      <div class="wnum"><small>WEEK</small><b>${i+1}</b></div>
+      <div><div class="tt">${esc(ch[0])}</div><div class="sub">${fdate(w.date)} · ${timeRange(c)}${w.fac?` · ${esc(facName(c,w.fac))}`:""}${w.status==="held"?` · ${present} attended`:""}</div></div>
+      <div class="st">${stChip(st,i===nx)}</div>
+     </div>
+     ${open?`<div class="body">
+      <div class="flow">${co.flow.map(([l,m])=>`<div style="flex:${m}">${l}<span>${m} min</span></div>`).join("")}</div>
+      <dl class="kv">
+       <dt>My Foundation</dt><dd>${esc(ch[1])}</dd>
+       <dt>Key commitment</dt><dd>${esc(ch[2])}</dd>
+       <dt>Every week</dt><dd>Report on commitments · choose action partners · contact your partner during the week</dd>
+       ${w.notes?`<dt>Notes</dt><dd>${esc(w.notes)}</dd>`:""}
+      </dl>
+      <div class="edit-only" style="margin-top:14px">
+       <div class="fields">
+        <label class="field"><span>Date</span><input type="date" value="${w.date}" onchange="setWeek('${k}',${i},'date',this.value)"></label>
+        <label class="field"><span>Facilitating this week</span><select onchange="setWeek('${k}',${i},'fac',this.value)"><option value="">—</option>${c.facilitators.map(f=>`<option value="${f.id}" ${w.fac===f.id?"selected":""}>${esc(f.name)}</option>`).join("")}</select></label>
+       </div>
+       <label class="field" style="margin-top:10px"><span>Notes (room change, video, reminders)</span><input value="${esc(w.notes)}" onchange="setWeek('${k}',${i},'notes',this.value)" placeholder="e.g. Bring calculators"></label>
+       ${k==="youth"?`<label class="row small" style="margin-top:10px;cursor:pointer"><input type="checkbox" style="width:auto" ${w.twoAdults?"checked":""} onchange="setWeek('${k}',${i},'twoAdults',this.checked)"> Two responsible adults present (youth protection)</label>`:""}
+       <div class="row" style="margin-top:12px">
+        ${w.status!=="held"?`<button class="btn sm gold" onclick="markHeld('${k}',${i})">Mark held & take roll</button>`:`<button class="btn sm" onclick="setWeek('${k}',${i},'status','scheduled')">Undo held</button>`}
+        ${w.status!=="cancelled"?`<button class="btn sm danger" onclick="setWeek('${k}',${i},'status','cancelled')">Cancel week</button>`:`<button class="btn sm" onclick="setWeek('${k}',${i},'status','scheduled')">Restore</button>`}
+        <button class="btn sm" onclick="postpone('${k}',${i})">Push this & later weeks +1 week</button>
+        <span class="sp"></span><button class="btn sm ghost" onclick="copyAnnounce('${k}',${i})">Copy announcement</button>
+       </div>
+      </div>
+      <div class="view-only row" style="margin-top:12px"><a class="btn sm" href="${co.url}" target="_blank" rel="noopener">Manual & videos ↗</a><button class="btn sm ghost" onclick="copyAnnounce('${k}',${i})">Copy details</button></div>
+     </div>`:""}
+    </div>`}).join("")+`<div class="row" style="margin-top:14px"><button class="btn" onclick="downloadICS('${k}')">Add all dates to my calendar (.ics)</button></div>`;
+}
+function lessonOnlyList(k){const co=CR(k);return `<div class="chlist">${co.ch.map((ch,i)=>`<div class="ch"><div class="n">WEEK ${i+1}</div><div class="t">${esc(ch[0])}</div><div class="small muted">My Foundation: ${esc(ch[1])}</div></div>`).join("")}</div>`}
+
+function tabAttendance(k){
+  const c=C(k),co=CR(k),ps=activeParts(c);
+  if(!ps.length)return `<div class="empty">No one on the roster yet. ${canEdit()?`<button class="btn sm gold" onclick="ui.sub['${k}']='people';render()">Add ${k==="couples"?"couples":"people"}</button>`:""}</div>`;
+  const held=heldCount(c);
+  const eligible=ps.filter(p=>attCount(c,p.id)>=co.complete).length;
+  const heldWeeks=c.weeks.map((w,i)=>[w,i]).filter(([w])=>w.status==="held");
+  const avg=heldWeeks.length?Math.round(heldWeeks.reduce((a,[w])=>a+ps.filter(p=>w.att?.[p.id]).length,0)/heldWeeks.length/ps.length*100):0;
+  return `<div class="stats" style="margin-bottom:14px">
+    <div class="stat"><b>${held}</b><span>Meetings held</span></div>
+    <div class="stat"><b>${avg}%</b><span>Average attendance</span></div>
+    <div class="stat"><b>${ps.length}</b><span>On the roster</span></div>
+    <div class="stat"><b>${eligible}</b><span>On track for completion (${co.complete}+)</span></div>
+  </div>
+  <div class="small muted" style="margin-bottom:8px">Tap a box to mark attendance on held weeks. Completion letter needs ${co.complete} of ${c.weeks.length} meetings.</div>
+  <div class="scrollx"><table class="att"><thead><tr><th class="nm">${k==="couples"?"Couple":"Name"}</th>${c.weeks.map((w,i)=>`<th title="${esc(co.ch[i][0])}">W${i+1}<br><span style="font-weight:600">${w.date?pd(w.date).toLocaleDateString("en-US",{month:"numeric",day:"numeric"}):""}</span></th>`).join("")}<th>Total</th></tr></thead>
+  <tbody>${ps.map(p=>{const n=attCount(c,p.id),remaining=c.weeks.filter((w,i)=>w.status==="scheduled").length,ok=n>=co.complete,possible=n+remaining>=co.complete;
+    return `<tr><td class="nm"><b>${esc(p.name)}</b><br><span class="elig" style="color:${ok?"#a8d3b2":possible?"var(--cream2)":"#f0a99b"}">${ok?"Completion ✓":possible?`${co.complete-n} more to complete`:"Can’t reach completion"}</span></td>
+    ${c.weeks.map((w,i)=>w.status==="held"?`<td><button class="cell ${w.att?.[p.id]?"y":""}" onclick="toggleAtt('${k}',${i},'${p.id}')">${w.att?.[p.id]?"✓":""}</button></td>`:`<td><span class="cell na" style="display:inline-flex;align-items:center;justify-content:center">${w.status==="cancelled"?"✕":"·"}</span></td>`).join("")}
+    <td><b>${n}</b></td></tr>`}).join("")}
+  <tr><td class="nm muted small">Present</td>${c.weeks.map(w=>`<td class="small">${w.status==="held"?ps.filter(p=>w.att?.[p.id]).length:""}</td>`).join("")}<td></td></tr>
+  </tbody></table></div>`;
+}
+
+function tabPeople(k){
+  const c=C(k),isC=k==="couples";
+  const counts=isC?COUPLE_STATUS.map(s=>[s,c.participants.filter(p=>p.status===s).length]):YOUTH_GROUP.map(g=>[g,c.participants.filter(p=>p.group===g).length]);
+  return `<div class="grid2">
+  <div class="card"><div class="label">Facilitators</div><div class="h3" style="margin:4px 0 4px">Who leads the group</div>
+   <div class="small muted" style="margin-bottom:12px">Facilitators guide — they don’t teach. Rotate who conducts each week on the schedule.</div>
+   <div class="plist">${c.facilitators.map(f=>`<div class="person"><div class="av">${initials(f.name)}</div><div><b>${esc(f.name)}</b><div class="small muted">${esc(f.role||"Facilitator")}${f.phone?` · <a href="tel:${esc(f.phone)}">${esc(f.phone)}</a>`:""}</div></div>
+     <div class="ctl edit-only"><button class="btn sm danger" onclick="removeFac('${k}','${f.id}')">Remove</button></div></div>`).join("")||`<div class="empty small">No facilitators added yet</div>`}</div>
+   <div class="edit-only" style="margin-top:14px"><div class="fields">
+    <label class="field"><span>Name</span><input id="fN-${k}" placeholder="${isC?"Bro. & Sis. ___":"Name"}"></label>
+    <label class="field"><span>Role</span><select id="fR-${k}"><option>Lead facilitator</option><option>Co-facilitator</option><option>Stake self-reliance specialist</option><option>Bishopric contact</option></select></label>
+    <label class="field"><span>Phone</span><input id="fP-${k}" type="tel" placeholder="optional"></label>
+   </div><button class="btn gold sm" style="margin-top:10px" onclick="addFac('${k}')">Add facilitator</button></div>
+  </div>
+  <div class="card"><div class="label">${isC?"Assigned couples":"Participants"}</div><div class="h3" style="margin:4px 0 4px">${isC?"Bishopric assignments":"Everyone welcome"}</div>
+   <div class="row" style="margin-bottom:12px">${counts.filter(x=>x[1]).map(([l,n])=>`<span class="chip stone">${esc(l)} · ${n}</span>`).join("")||`<span class="small muted">Nobody added yet</span>`}</div>
+   <div class="plist">${c.participants.map(p=>{const n=attCount(c,p.id);return `<div class="person"><div class="av">${initials(p.name)}</div>
+    <div><b>${esc(p.name)}</b><div class="small muted">${isC?esc(p.status):esc(p.group)} · ${n} attended${p.phone?` · ${esc(p.phone)}`:""}</div></div>
+    <div class="ctl edit-only">${isC?`<select onchange="setPerson('${k}','${p.id}','status',this.value)">${COUPLE_STATUS.map(s=>`<option ${p.status===s?"selected":""}>${s}</option>`).join("")}</select>`
+      :`<select onchange="setPerson('${k}','${p.id}','group',this.value)">${YOUTH_GROUP.map(s=>`<option ${p.group===s?"selected":""}>${s}</option>`).join("")}</select>`}
+     <button class="btn sm danger" onclick="removePerson('${k}','${p.id}')">✕</button></div></div>`}).join("")||`<div class="empty small">${isC?"Add the couples the bishopric has assigned":"Add people as they come"}</div>`}</div>
+   <div class="edit-only" style="margin-top:14px"><div class="fields">
+    <label class="field"><span>${isC?"Couple":"Name"}</span><input id="pN-${k}" placeholder="${isC?"e.g. Bro. & Sis. Tonga":"Name"}" onkeydown="if(event.key==='Enter')addPerson('${k}')"></label>
+    <label class="field"><span>${isC?"Status":"Group"}</span><select id="pS-${k}">${(isC?COUPLE_STATUS:YOUTH_GROUP).map(s=>`<option>${s}</option>`).join("")}</select></label>
+    <label class="field"><span>Phone</span><input id="pP-${k}" type="tel" placeholder="optional"></label>
+   </div><button class="btn gold sm" style="margin-top:10px" onclick="addPerson('${k}')">Add ${isC?"couple":"person"}</button></div>
+  </div></div>`;
+}
+
+function tabSetup(k){
+  const c=C(k);
+  return `<div class="card">
+   <div class="label">Class setup</div><div class="h3" style="margin:4px 0 14px">Course, day, time & place</div>
+   <div class="fields">
+    <label class="field"><span>Class name</span><input value="${esc(c.name)}" onchange="setField('${k}','name',this.value)"></label>
+    <label class="field"><span>Who it’s for</span><input value="${esc(c.audience)}" onchange="setField('${k}','audience',this.value)"></label>
+    <label class="field"><span>Course</span><select onchange="changeCourse('${k}',this.value)">${Object.entries(COURSES).map(([id,co])=>`<option value="${id}" ${c.course===id?"selected":""}>${co.name} (${co.ch.length} wks)</option>`).join("")}</select></label>
+   </div>
+   <div class="small" style="margin-top:8px;color:var(--cream2)">${esc(CR(k).fit)}</div>
+   <hr class="gl">
+   <div class="fields">
+    <label class="field"><span>First meeting date</span><input type="date" value="${c.start}" onchange="setStart('${k}',this.value)"></label>
+    <label class="field"><span>Start time</span><input type="time" value="${c.time}" onchange="setField('${k}','time',this.value)"></label>
+    <label class="field"><span>End time</span><input type="time" value="${c.end}" onchange="setField('${k}','end',this.value)"></label>
+    <label class="field"><span>Location / room</span><input value="${esc(c.location)}" placeholder="e.g. Relief Society room" onchange="setField('${k}','location',this.value)"></label>
+   </div>
+   <div class="small muted" style="margin-top:8px">Changing the first date rebuilds all weekly dates (attendance and notes are kept). Use “Push +1 week” on the schedule for skipped Sundays like conference.</div>
+   <hr class="gl">
+   <div class="row"><button class="btn" onclick="downloadICS('${k}')">Download calendar (.ics)</button><button class="btn" onclick="copyAnnounce('${k}')">Copy next announcement</button><span class="sp"></span><button class="btn danger" onclick="resetClass('${k}')">Reset this class</button></div>
+  </div>`;
+}
+
+/* ---------- LESSON LIBRARY ---------- */
+function viewLessons(){
+  const id=ui.lib,co=COURSES[id];
+  return `<div class="card tapa-bg"><div class="label">Lesson library</div><div class="h2" style="margin:6px 0 4px">The Church’s self-reliance courses</div>
+  <div class="small" style="color:var(--cream2)">Every group follows the same council pattern — no teacher, the Holy Ghost teaches. Free manuals and videos are on the Church site; enrollment at <a href="https://self-reliance.churchofjesuschrist.org" target="_blank" rel="noopener">self-reliance.churchofjesuschrist.org</a>.</div>
+  <div class="coursepick" style="margin-top:14px">${Object.entries(COURSES).map(([k,x])=>`<button class="${k===id?"on":""}" onclick="ui.lib='${k}';render()">${x.name}<br><span class="small muted">${x.ch.length} weeks</span></button>`).join("")}</div></div>
+  <div class="card" style="margin-top:14px"><div class="row"><div><div class="h3">${co.name}</div><div class="small" style="color:var(--cream2);margin-top:4px">${esc(co.fit)}</div></div><span class="sp"></span><a class="btn sm" href="${co.url}" target="_blank" rel="noopener">Manual & videos ↗</a></div>
+   <div class="flow">${co.flow.map(([l,m])=>`<div style="flex:${m}">${l}<span>${m} min</span></div>`).join("")}</div>
+   <div class="small muted">Completion letter: attend ${co.complete} of ${co.ch.length} meetings, live and teach the My Foundation principles, and complete a service activity.</div>
+   <div class="chlist">${co.ch.map((ch,i)=>`<div class="ch"><div class="n">WEEK ${i+1}</div><div class="t">${esc(ch[0])}</div><div class="small"><span class="muted">My Foundation:</span> ${esc(ch[1])}</div><div class="small" style="margin-top:4px"><span class="muted">Commitment:</span> ${esc(ch[2])}</div></div>`).join("")}</div>
+  </div>
+  <div class="card" style="margin-top:14px"><div class="label">For facilitators</div><div class="h3" style="margin:4px 0 12px">Straight from the facilitator pages</div>
+   <div class="dos"><div><b class="small" style="color:var(--sage)">DO</b><ul style="margin-top:8px">
+    <li>Download videos and check equipment beforehand</li><li>Prepare yourself spiritually</li><li>Start and end on time; choose a timekeeper</li>
+    <li>Make sure everyone reports — even late arrivals</li><li>Be a group member: make, keep, and report commitments</li>
+    <li>Contact members during the week</li><li>Update the stake self-reliance specialist</li><li>Have fun and celebrate success</li></ul></div>
+   <div class="no"><b class="small" style="color:var(--rose)">DON’T</b><ul style="margin-top:8px">
+    <li>Prepare a lesson or act as the expert</li><li>Speak more than others or answer every question</li><li>Sit at the head of the table or stand up to facilitate</li>
+    <li>Skip the Ponder section</li><li>Comment after every comment</li><li>Cancel — ask a group member to facilitate instead</li></ul></div></div>
+   <hr class="gl"><div class="small" style="color:var(--cream2)"><b>Reporting:</b> register each group at the start and submit the end-of-group report at the last meeting so participants can receive completion certificates. Your stake self-reliance specialist can help.</div>
+  </div>`;
+}
+
+/* ---------- SETTINGS ---------- */
+function viewSettings(){
+  const e=canEdit();
+  return `<div class="grid2">
+  <div class="card"><div class="label">Facilitator PIN</div><div class="h3" style="margin:4px 0 6px">${S.pinHash?"PIN is set":"No PIN yet — anyone can edit"}</div>
+   <div class="small muted" style="margin-bottom:12px">Members see a read-only page; facilitators unlock editing with the PIN. (A light lock to prevent accidental edits — share the PIN only with facilitators and the bishopric.)</div>
+   ${e?`<div class="row"><input id="newPin" type="password" inputmode="numeric" placeholder="New PIN" style="max-width:180px"><button class="btn gold" onclick="setPin()">Save PIN</button>${S.pinHash?`<button class="btn danger" onclick="clearPin()">Remove</button>`:""}</div>`:`<button class="btn gold" onclick="openUnlock()">Sign in</button>`}
+  </div>
+  <div class="card"><div class="label">Live sync</div><div class="h3" style="margin:4px 0 6px">${fsRef?"Connected to Firebase":"This device only"}</div>
+   <div class="small muted">${fsRef?"Changes save to Firestore and appear on every phone instantly.":"Right now records live in this browser. To share one tracker across every facilitator’s phone, paste a Firebase web config into FIREBASE_CONFIG at the top of index.html (same as the other ward apps)."}</div>
+   ${fsRef?"":`<pre class="code" style="margin-top:10px">Firestore doc: ${FIRESTORE_COLLECTION}/${FIRESTORE_DOC}
+Rules (simple):
+match /${FIRESTORE_COLLECTION}/{doc} {
+  allow read, write: if true;
+}</pre>`}
+  </div>
+  <div class="card edit-only"><div class="label">Backup</div><div class="h3" style="margin:4px 0 12px">Export or restore</div>
+   <div class="row"><button class="btn" onclick="exportJSON()">Download backup</button><label class="btn" style="cursor:pointer">Restore backup<input type="file" accept="application/json" style="display:none" onchange="importJSON(this)"></label></div>
+  </div>
+  <div class="card"><div class="label">Resources</div><div class="h3" style="margin:4px 0 10px">Helpful links</div>
+   <div class="small" style="display:flex;flex-direction:column;gap:6px">
+    <a href="https://www.churchofjesuschrist.org/life/self-reliance?lang=eng" target="_blank" rel="noopener">Self-Reliance — Life Help</a>
+    <a href="https://www.churchofjesuschrist.org/life/self-reliance/how-to-increase-my-self-reliance?lang=eng" target="_blank" rel="noopener">How to Build My Self-Reliance</a>
+    <a href="https://www.churchofjesuschrist.org/callings/welfare-self-reliance?lang=eng" target="_blank" rel="noopener">Welfare & Self-Reliance Leader Resources</a>
+    <a href="https://self-reliance.churchofjesuschrist.org" target="_blank" rel="noopener">Find or register a group</a>
+    <a href="https://www.englishconnect.org/" target="_blank" rel="noopener">EnglishConnect</a>
+    <a href="https://www.justserve.org/" target="_blank" rel="noopener">JustServe (service projects)</a>
+   </div></div>
+  </div>`;
+}
+
+/* ===================== ACTIONS ===================== */
+function setField(k,f,v){if(!guard())return;C(k)[f]=v;save();render()}
+function setStart(k,v){if(!guard())return;const c=C(k);c.start=v;c.weeks.forEach((w,i)=>w.date=v?addDays(v,7*i):"");save();render();toast("Schedule built")}
+function changeCourse(k,id){if(!guard())return;const c=C(k);
+  if(heldCount(c)&&!confirm("Meetings are already recorded. Switch courses anyway? Week records stay by week number."))return render();
+  c.course=id;ensureWeeks(c);if(c.start)c.weeks.forEach((w,i)=>{if(!w.date)w.date=addDays(c.start,7*i)});save();render();toast("Course set to "+COURSES[id].name)}
+function setWeek(k,i,f,v){if(!guard())return;C(k).weeks[i][f]=v;save();render()}
+function markHeld(k,i){if(!guard())return;const c=C(k);c.weeks[i].status="held";if(!c.weeks[i].date)c.weeks[i].date=TODAY;save();ui.sub[k]="attendance";render();toast("Week "+(i+1)+" held — tap who came")}
+function postpone(k,i){if(!guard())return;const c=C(k);if(!confirm(`Move week ${i+1} and every later week back by 7 days?`))return;
+  for(let j=i;j<c.weeks.length;j++)if(c.weeks[j].date&&c.weeks[j].status!=="held")c.weeks[j].date=addDays(c.weeks[j].date,7);save();render();toast("Schedule pushed one week")}
+function toggleAtt(k,i,pid){if(!guard())return;const w=C(k).weeks[i];w.att=w.att||{};w.att[pid]=!w.att[pid];save();render()}
+function addFac(k){if(!guard())return;const n=document.getElementById("fN-"+k).value.trim();if(!n)return toast("Add a name");
+  C(k).facilitators.push({id:uid(),name:n,role:document.getElementById("fR-"+k).value,phone:document.getElementById("fP-"+k).value.trim()});save();render()}
+function removeFac(k,id){if(!guard())return;const c=C(k);if(!confirm("Remove this facilitator?"))return;c.facilitators=c.facilitators.filter(f=>f.id!==id);c.weeks.forEach(w=>{if(w.fac===id)w.fac=""});save();render()}
+function addPerson(k){if(!guard())return;const n=document.getElementById("pN-"+k).value.trim();if(!n)return toast("Add a name");const s=document.getElementById("pS-"+k).value;
+  const p={id:uid(),name:n,phone:document.getElementById("pP-"+k).value.trim()};if(k==="couples")p.status=s;else{p.group=s;p.status="Attending"}
+  C(k).participants.push(p);save();render();setTimeout(()=>document.getElementById("pN-"+k)?.focus(),30)}
+function setPerson(k,id,f,v){if(!guard())return;const p=C(k).participants.find(x=>x.id===id);if(p){p[f]=v;save();render()}}
+function removePerson(k,id){if(!guard())return;if(!confirm("Remove from the roster? Their attendance will be cleared."))return;const c=C(k);c.participants=c.participants.filter(p=>p.id!==id);c.weeks.forEach(w=>{if(w.att)delete w.att[id]});save();render()}
+function resetClass(k){if(!guard())return;if(!confirm("Clear everything for this class (people, schedule, attendance)?"))return;const c=C(k);S.classes[k]=blankClass(k,c.name,c.tag,c.course,c.audience);ensureWeeks(S.classes[k]);save();render()}
+function setPin(){const v=document.getElementById("newPin").value.trim();if(v.length<4)return toast("Use at least 4 digits");S.pinHash=hash(v);sessionStorage.setItem(UNLOCK_KEY,S.pinHash);save();render();toast("PIN saved")}
+function clearPin(){if(!guard())return;if(!confirm("Remove the PIN? Anyone with the link could edit."))return;S.pinHash="";save();render()}
+
+/* ---------- sharing ---------- */
+function announceText(k,i){
+  const c=C(k),co=CR(k);if(i===undefined)i=nextIdx(c);if(i<0)return null;const w=c.weeks[i],ch=co.ch[i];
+  return `📘 Self-Reliance — ${c.name}
+${co.name} · Week ${i+1} of ${c.weeks.length}
+🗓 ${fdate(w.date,true)} · ${timeRange(c)}
+📍 ${c.location||"Location TBD"}
+
+“${ch[0]}”
+My Foundation: ${ch[1]}${w.fac?`\nFacilitating: ${facName(c,w.fac)}`:""}${w.notes?`\nNote: ${w.notes}`:""}
+
+Bring your workbook, a pen, and your report on last week’s commitments. ${k==="youth"?"Everyone is welcome — bring a friend!":"See you there!"}`;
+}
+function copyAnnounce(k,i){const t=announceText(k,i);if(!t)return toast("No upcoming class to announce");copy(t,"Announcement copied")}
+function copySnapshot(){
+  const lines=["Self-Reliance snapshot — Riverton 24th Ward",fdate(TODAY,true),""];
+  ["couples","youth"].forEach(k=>{const c=C(k),co=CR(k),ps=activeParts(c),nx=nextIdx(c);
+    const held=c.weeks.map((w,i)=>[w,i]).filter(([w])=>w.status==="held");const last=held[held.length-1];
+    lines.push(`■ ${c.name} — ${co.name}`);
+    lines.push(`  Progress: ${heldCount(c)} of ${c.weeks.length} meetings held`);
+    lines.push(`  Roster: ${ps.length}${k==="couples"?` couples (${c.participants.filter(p=>p.status==="Invited").length} still invited)`:" people"}`);
+    if(last)lines.push(`  Last class (wk ${last[1]+1}): ${ps.filter(p=>last[0].att?.[p.id]).length} of ${ps.length} attended`);
+    lines.push(nx>=0?`  Next: ${fdate(c.weeks[nx].date)} — Wk ${nx+1} “${co.ch[nx][0]}”`:"  Next: not scheduled");
+    lines.push(`  On track for completion: ${ps.filter(p=>attCount(c,p.id)+c.weeks.filter(w=>w.status==="scheduled").length>=co.complete).length} of ${ps.length}`);
+    lines.push("");});
+  copy(lines.join("\n"),"Snapshot copied")}
+function downloadICS(k){
+  const c=C(k),co=CR(k);const ws=c.weeks.map((w,i)=>[w,i]).filter(([w])=>w.date&&w.status!=="cancelled");
+  if(!ws.length)return toast("No dates to export yet");
+  const f=(d,t)=>d.replace(/-/g,"")+(t?"T"+t.replace(":","")+"00":"");
+  const icsEsc=s=>String(s).replace(/[\\;,]/g,m=>"\\"+m).replace(/\n/g,"\\n");
+  let out=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Riverton24//SelfReliance//EN","CALSCALE:GREGORIAN"];
+  ws.forEach(([w,i])=>{out.push("BEGIN:VEVENT","UID:"+k+"-"+i+"-"+w.date+"@riverton24-sr");
+    out.push("DTSTAMP:"+new Date().toISOString().replace(/[-:]/g,"").split(".")[0]+"Z");
+    if(c.time){out.push("DTSTART:"+f(w.date,c.time));out.push("DTEND:"+f(w.date,c.end||c.time))}else{out.push("DTSTART;VALUE=DATE:"+f(w.date));out.push("DTEND;VALUE=DATE:"+f(addDays(w.date,1)))}
+    out.push("SUMMARY:"+icsEsc(`Self-Reliance: ${c.name} — Wk ${i+1}`));
+    out.push("DESCRIPTION:"+icsEsc(`${co.name}\n${co.ch[i][0]}\nMy Foundation: ${co.ch[i][1]}`));
+    if(c.location)out.push("LOCATION:"+icsEsc(c.location));out.push("END:VEVENT")});
+  out.push("END:VCALENDAR");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([out.join("\r\n")],{type:"text/calendar"}));a.download=`self-reliance-${k}.ics`;a.click();toast("Calendar file downloaded")}
+function exportJSON(){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(S,null,2)],{type:"application/json"}));a.download=`riverton24-self-reliance-${TODAY}.json`;a.click()}
+function importJSON(inp){if(!guard())return;const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.classes)throw 0;if(!confirm("Replace current data with this backup?"))return;S=d;Object.values(S.classes).forEach(ensureWeeks);save();render();toast("Backup restored")}catch(e){toast("That file isn’t a valid backup")}};r.readAsText(f)}
+
+/* ===================== FIREBASE (optional) ===================== */
+let fsRef=null,pendingRender=false;
+function setSync(t,live){const el=document.getElementById("sync");el.classList.toggle("live",!!live);el.lastElementChild.textContent=t}
+function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement("script");s.src=src;s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
+async function initSync(){
+  if(!FIREBASE_CONFIG)return;
+  try{
+    setSync("Connecting…",false);
+    const v="10.12.2";
+    await loadScript(`https://www.gstatic.com/firebasejs/${v}/firebase-app-compat.js`);
+    await loadScript(`https://www.gstatic.com/firebasejs/${v}/firebase-firestore-compat.js`);
+    firebase.initializeApp(FIREBASE_CONFIG);
+    fsRef=firebase.firestore().collection(FIRESTORE_COLLECTION).doc(FIRESTORE_DOC);
+    fsRef.onSnapshot(snap=>{
+      setSync("Live — synced",true);
+      if(!snap.exists){fsRef.set(JSON.parse(JSON.stringify(S)));return}
+      const d=snap.data();
+      if(d&&d.classes&&(d.updated||0)>(S.updated||0)){S=d;Object.values(S.classes).forEach(ensureWeeks);localStorage.setItem(LS_KEY,JSON.stringify(S));safeRender()}
+    },()=>setSync("Offline — saved locally",false));
+  }catch(e){setSync("Sync unavailable — saved locally",false)}
+}
+function safeRender(){const a=document.activeElement;if(a&&a.closest&&a.closest("#app")&&/INPUT|TEXTAREA|SELECT/.test(a.tagName)){pendingRender=true;return}render()}
+document.addEventListener("focusout",()=>{if(pendingRender){pendingRender=false;setTimeout(render,50)}});
+
+render();initSync();
+</script>
+</body>
+</html>
